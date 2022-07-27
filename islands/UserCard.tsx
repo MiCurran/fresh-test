@@ -32,7 +32,7 @@ return () => {
   
   return (
     
-<div class={tw`w-2xl rounded-lg shadow-md `}
+<div class={tw`w-2xl max-w-2xl rounded-lg shadow-md `}
 style={{backgroundColor: 'hsl(217, 19%, 24%)'}}
 >
     <div class={tw`flex flex-col items-center p-10 font-Manrope text-center`}
@@ -40,7 +40,7 @@ style={{backgroundColor: 'hsl(217, 19%, 24%)'}}
     >
         <p class={tw`text-lg font-bold font-sans`} style={{color: 'hsl(150, 100%, 66%)'}}>Fresh Advice</p>
         {loaded
-          ? <p>"{user}"</p>
+          ? <p style={{fontWeight: 800}}>"{user}"</p>
           : <p>loading...</p>
         }
                 <div class={tw`flex mt-4 space-x-3 lg:mt-6`}>
