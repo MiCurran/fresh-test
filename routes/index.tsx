@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from "preact";
 import { tw } from "@twind";
-import UserCard from '../islands/UserCard.tsx'
+import AdviceCard from '../islands/AdviceCard.tsx'
 
 export const Head = () => (
   <head>
@@ -14,8 +14,10 @@ export const Head = () => (
 export default function Home() {
 
   return (
+    <div>
+    <Head />
     <div 
-      class={tw`p-4 mx-auto flex flex-col justify-center items-center bg-green-500 min-h-screen`}
+      class={tw`p-4 mx-auto flex flex-col justify-center items-center min-h-screen`}
       style={{backgroundColor: 'hsl(218, 23%, 16%)'}}
     >
       <img
@@ -23,7 +25,8 @@ export default function Home() {
         height="250px"
         alt="the fresh logo: a sliced lemon dripping with juice"
       />
-      <UserCard/>
+      <AdviceCard/>
+    </div>
     </div>
   );
 }

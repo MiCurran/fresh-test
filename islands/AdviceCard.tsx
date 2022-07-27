@@ -6,15 +6,15 @@ import axiod from "https://deno.land/x/axiod/mod.ts";
 
 const Quote = () => <span style={{fontSize: '28px', fontWeight: 700}}>"</span>
 
-export default function UserCard() {
-const [user, setUser] = useState<any>(null);
+export default function AdviceCard() {
+const [advice, setAdvice] = useState<any>(null);
 const [loaded, setLoaded] = useState<boolean>(false);
 const [hovered, setHovered] = useState<boolean>(false);
 
 const getAdvice = () => {
   setLoaded(false);
   axiod.get('https://api.adviceslip.com/advice').then((data) => {
-    setUser(data.data.slip.advice)
+    setAdvice(data.data.slip.advice)
     console.log(data.data.slip.advice)
     setLoaded(true);
 });
@@ -47,7 +47,7 @@ return () => {
         </div>
         <div class={tw`p-4`}>
         {loaded
-          ? <p style={{fontWeight: 800}}><Quote />{user}<Quote /></p>
+          ? <p style={{fontWeight: 800}}><Quote />{advice}<Quote /></p>
           : <p>loading...</p>
         }
         </div>
